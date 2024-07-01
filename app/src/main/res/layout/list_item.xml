@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- card view to display info -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        android:foreground="@drawable/ripple_effect">
+
+        <!-- this linear layout contains all info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_margin"
+            android:weightSum="100">
+
+            <!-- first child is the product name -->
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="55"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#2B3D4D" />
+
+            <!-- second child contains the product info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="45"
+                android:orientation="vertical">
+
+                <!-- quantity text -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/quantity_icon"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="32dp"
+                        android:maxHeight="32dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="16dp"
+                        app:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cardview_quantity_label"
+                        android:fontFamily="sans-serif"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textSize="11sp"
+                        android:textColor="#AEB6BD"
+                        />
+
+                    <TextView
+                        android:id="@+id/quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textSize="11sp"
+                        android:textColor="#AEB6BD"
+                        />
+
+                </LinearLayout>
+
+                <!-- price text -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/price_icon"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="32dp"
+                        android:maxHeight="32dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="16dp"
+                        app:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cardview_price_label"
+                        android:fontFamily="sans-serif"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textSize="11sp"
+                        android:textColor="#AEB6BD"/>
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textSize="11sp"
+                        android:textColor="#AEB6BD" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

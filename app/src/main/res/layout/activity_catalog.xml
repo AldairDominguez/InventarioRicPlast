@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CatalogActivity"
+    android:background="@color/white_smoke">
+
+
+    <!-- This layout contains all the views -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--android:layout_below="@+id/search_bar1"-->
+        <!-- Listview shows all available items -->
+        <ListView
+            android:id="@+id/catalog_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:layout_below="@+id/search_bar1"
+            ></ListView>
+
+        <!-- Empty view for the list -->
+        <RelativeLayout
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/empty_shelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/empty_shelf" />
+
+            <TextView
+                android:id="@+id/empty_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_shelf"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="16dp"
+                android:text="@string/empty_view_title_text"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/empty_subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_title_text"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif"
+                android:paddingTop="8dp"
+                android:text="@string/empty_view_subtitle_text"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="#A2AAB0" />
+        </RelativeLayout>
+
+        <!-- FAB -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/catalog_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:clickable="true"
+            android:tint="@color/white"
+            app:layout_anchor="@id/app_bar_layout"
+            app:layout_anchorGravity="bottom|right|end"
+            app:srcCompat="@android:drawable/ic_input_add"
+            tools:ignore="NotSibling" />
+
+        <!--&lt;!&ndash; Search layout &ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/search_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:layout_alignParentTop="true">-->
+
+
+
+        <!--</android.support.v7.widget.CardView>-->
+        <!-- Search bar -->
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/search_bar1"
+
+            style="@style/SearchBarTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mt_speechMode="false"
+            app:mt_hint="Type to search"
+            app:mt_placeholder="Buscar"
+            android:layout_alignParentTop="true"
+            android:layout_margin="15dp"
+            android:padding="3dp"
+
+            app:mt_roundedSearchBarEnabled="true"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
